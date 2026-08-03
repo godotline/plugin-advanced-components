@@ -1,0 +1,197 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://#Template/[Resources]/GUI/info.png" id="1_icon"]
+[ext_resource type="Script" path="res://addons/godot_line/tscn/基础组件.gd" id="2_script"]
+
+[node name="基础组件" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_script")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="BasicLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "基础对象"
+
+[node name="PlayerButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "线 / 玩家"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="RoadPaverButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "路面铺设机"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="GroundButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "地板"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="ObstacleButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "障碍物"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="FakePlayerButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "假线"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="CollectibleLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "收集物与检查点"
+
+[node name="PyramidButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "金字塔"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="CrystalButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "晶体"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="GemButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "宝石"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="CrownCheckpointButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "皇冠检查点"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="HeartCheckpointButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "爱心检查点"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="TtfCheckpointButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "文字检查点"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="GuidanceLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "引导"
+
+[node name="GuidanceBoxButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "引导框"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="BehaviorLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "功能组件"
+
+[node name="JumpButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "跳跃触发器"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="TeleportButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "传送触发器"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="ChangeDirectionButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "改变方向触发器"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/PlayerButton" to="." method="_on_player_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/RoadPaverButton" to="." method="_on_road_paver_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/GroundButton" to="." method="_on_ground_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/ObstacleButton" to="." method="_on_obstacle_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/FakePlayerButton" to="." method="_on_fake_player_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/PyramidButton" to="." method="_on_pyramid_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/CrystalButton" to="." method="_on_crystal_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/GemButton" to="." method="_on_gem_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/CrownCheckpointButton" to="." method="_on_crown_checkpoint_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HeartCheckpointButton" to="." method="_on_heart_checkpoint_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/TtfCheckpointButton" to="." method="_on_ttf_checkpoint_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/GuidanceBoxButton" to="." method="_on_guidance_box_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/JumpButton" to="." method="_on_jump_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/TeleportButton" to="." method="_on_teleport_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/ChangeDirectionButton" to="." method="_on_change_direction_pressed"]

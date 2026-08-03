@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://#Template/[Resources]/GUI/info.png" id="1_icon"]
+[ext_resource type="Script" path="res://addons/godot_line/tscn/高级自定义组件.gd" id="2_script"]
+
+[node name="高级自定义组件" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_script")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="TriggerLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "触发器"
+
+[node name="TriggerButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "基础触发器"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="CameraTriggerButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "触发式视角移动"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="EventTriggerButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "事件触发器"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="MovingPositionButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "路径移动触发器"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[node name="FakePlayerTriggerButton" type="Button" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "假线控制触发器"
+icon = ExtResource("1_icon")
+clip_text = true
+expand_icon = true
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/TriggerButton" to="." method="_on_trigger_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/CameraTriggerButton" to="." method="_on_camera_trigger_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/EventTriggerButton" to="." method="_on_event_trigger_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/MovingPositionButton" to="." method="_on_moving_position_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/FakePlayerTriggerButton" to="." method="_on_fake_player_trigger_pressed"]
