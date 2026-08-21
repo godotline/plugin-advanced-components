@@ -1,7 +1,7 @@
 @tool
 extends "res://addons/godot_line/component_panel.gd"
 
-const CAMERA_TRIGGER_SCRIPT_PATH: String = "res://#Template/[Scripts]/CameraScripts/CameraTrigger.gd"
+const CAMERA_TRIGGER_SCRIPT_PATH: String = "res://#Template/[Scripts]/Camera/CameraTrigger.gd"
 const EVENT_TRIGGER_SCRIPT_PATH: String = "res://#Template/[Scripts]/Trigger/EventTrigger.gd"
 const MOVING_POSITION_SCRIPT_PATH: String = "res://#Template/[Scripts]/Animator/MovingPosMax.gd"
 const FAKE_PLAYER_TRIGGER_SCRIPT_PATH: String = "res://#Template/[Scripts]/Trigger/FakePlayerTrigger.gd"
