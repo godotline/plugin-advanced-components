@@ -67,16 +67,20 @@ func _add_node_to_scene(node: Node, display_name: String) -> void:
 	var node_name: String = display_name if not display_name.is_empty() else String(node.name)
 	node.name = _unique_child_name(scene_root, node_name)
 
+	# 递归设置 owner：只对 owner 为空的节点（如 add_trigger_component 动态创建的
+	# Comp1 子组件）赋值，保留 PackedScene 内嵌子场景节点原有的 owner，避免误内联嵌套实例。
+	# 参考 addons/template/component_add_panel.gd 的 _add_component 逻辑。
+	_own_subtree(node, scene_root)
+
 	var undo_redo: EditorUndoRedoManager = EditorInterface.get_editor_undo_redo()
 	if undo_redo:
 		undo_redo.create_action("添加 " + display_name)
 		undo_redo.add_do_method(scene_root, "add_child", node)
-		undo_redo.add_do_method(node, "set_owner", scene_root)
 		undo_redo.add_undo_method(scene_root, "remove_child", node)
+		undo_redo.add_do_reference(node)
 		undo_redo.commit_action()
 	else:
 		scene_root.add_child(node)
-		node.owner = scene_root
 
 	_last_added_node = node
 	EditorInterface.mark_scene_as_unsaved()
@@ -84,6 +88,13 @@ func _add_node_to_scene(node: Node, display_name: String) -> void:
 	selection.clear()
 	selection.add_node(node)
 	notify_property_list_changed()
+
+
+func _own_subtree(node: Node, owner_root: Node) -> void:
+	if node.owner == null:
+		node.owner = owner_root
+	for child: Node in node.get_children():
+		_own_subtree(child, owner_root)
 
 
 func _unique_child_name(parent: Node, requested_name: String) -> String:
