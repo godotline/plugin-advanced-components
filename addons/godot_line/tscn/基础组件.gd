@@ -11,7 +11,6 @@ const GUIDANCE_BOX_SCENE_PATH: String = "res://#Template/[Resources]/GuidanceBox
 const GEM_SCENE_PATH: String = "res://#Template/Gem.tscn"
 const CROWN_CHECKPOINT_SCENE_PATH: String = "res://#Template/CrownCheckPoint.tscn"
 const HEART_CHECKPOINT_SCENE_PATH: String = "res://#Template/HeartCheckPoint.tscn"
-const TTF_CHECKPOINT_SCENE_PATH: String = "res://#Template/TTFCheckPoint.tscn"
 const FAKE_PLAYER_SCENE_PATH: String = "res://#Template/FakePlayer.tscn"
 const JUMP_SCRIPT_PATH: String = "res://#Template/[Scripts]/Trigger/Jump.gd"
 const TELEPORT_SCRIPT_PATH: String = "res://#Template/[Scripts]/Trigger/Teleport.gd"
@@ -57,10 +56,6 @@ func _on_crown_checkpoint_pressed() -> void:
 
 func _on_heart_checkpoint_pressed() -> void:
 	add_scene(HEART_CHECKPOINT_SCENE_PATH, "HeartCheckPoint")
-
-
-func _on_ttf_checkpoint_pressed() -> void:
-	add_scene(TTF_CHECKPOINT_SCENE_PATH, "TTFCheckPoint")
 
 
 func _on_fake_player_pressed() -> void:

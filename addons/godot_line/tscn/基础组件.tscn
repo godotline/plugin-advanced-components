@@ -125,15 +125,6 @@ icon = ExtResource("1_icon")
 clip_text = true
 expand_icon = true
 
-[node name="TtfCheckpointButton" type="Button" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 46)
-layout_mode = 2
-theme_override_font_sizes/font_size = 18
-text = "文字检查点"
-icon = ExtResource("1_icon")
-clip_text = true
-expand_icon = true
-
 [node name="GuidanceLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
@@ -190,7 +181,6 @@ expand_icon = true
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/GemButton" to="." method="_on_gem_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/CrownCheckpointButton" to="." method="_on_crown_checkpoint_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/HeartCheckpointButton" to="." method="_on_heart_checkpoint_pressed"]
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/TtfCheckpointButton" to="." method="_on_ttf_checkpoint_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/GuidanceBoxButton" to="." method="_on_guidance_box_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/JumpButton" to="." method="_on_jump_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/TeleportButton" to="." method="_on_teleport_pressed"]
