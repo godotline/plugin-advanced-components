@@ -47,13 +47,19 @@ func add_trigger_component(script_path: String, display_name: String) -> void:
 		push_error("GodotLine: 无法实例化基础触发器")
 		return
 
-	var component: Node = trigger.get_node_or_null("Comp1")
+	# 直接用脚本实例化组件，节点类型由脚本基类决定（extends Node 即 Node，
+	# extends Node3D 即 Node3D），避免把 Node 脚本挂到固定 Node3D 上。
+	# 参考 addons/template/component_add_panel.gd 的 _add_component。
+	var component: Node = script.new() as Node
 	if not component:
-		component = Node3D.new()
-		component.name = "Comp1"
-		trigger.add_child(component)
-	component.set_script(script)
+		push_error("GodotLine: 组件脚本必须继承 Node: %s" % script_path)
+		trigger.queue_free()
+		return
+
 	component.name = _unique_child_name(trigger, display_name)
+	trigger.add_child(component)
+	if trigger.has_method("refresh_behaviors"):
+		trigger.refresh_behaviors()
 	_add_node_to_scene(trigger, display_name)
 
 
